@@ -1,0 +1,18 @@
+package com.abc.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.abc.dao.TicketBookingDao;
+import com.abc.entities.Ticket;
+
+@Service
+public class TicketBookingService {
+
+	@Autowired
+	private TicketBookingDao ticketBookingDao;
+	
+	public Ticket createTicket(Ticket ticket) {
+		return ticketBookingDao.save(ticket);
+	}
+}

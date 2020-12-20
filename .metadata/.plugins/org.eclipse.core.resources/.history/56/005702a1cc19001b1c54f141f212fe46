@@ -1,0 +1,9 @@
+package com.abc;
+
+public class User {
+
+	private Long id;
+	private String name;
+	private String teamName;
+	private Integer salary;
+}

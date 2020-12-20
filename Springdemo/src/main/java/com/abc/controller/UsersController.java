@@ -1,0 +1,24 @@
+package com.abc.controller;
+
+import com.abc.model.User;
+import com.abc.repository.UserJpaRespository;
+   
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
+    
+@RestController
+@RequestMapping("/users")
+public class UsersController {
+    @Autowired
+    private UserJpaRespository userJpaRespository;
+    @GetMapping(value = "/all")
+    public List<User> findAll() {
+        return userJpaRespository.findAll();
+    }
+    @PostMapping(value = "/load")
+    public User load(@RequestBody final User users) {
+        userJpaRespository.save(users);
+        return userJpaRespository.findByName(users.getName());
+    }
+}

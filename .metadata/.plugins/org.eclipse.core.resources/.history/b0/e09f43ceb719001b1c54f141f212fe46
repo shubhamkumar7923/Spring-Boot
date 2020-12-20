@@ -1,0 +1,11 @@
+package com.abc;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Customer {
+
+	private Long id;
+	private String firstname;
+	private String lastname;
+}
